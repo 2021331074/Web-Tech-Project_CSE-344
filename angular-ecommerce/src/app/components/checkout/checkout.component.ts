@@ -28,6 +28,8 @@ export class CheckoutComponent implements OnInit {
   shippingAddressUpazilas: Upazila[] = [];
   billingAddressUpazilas: Upazila[] = [];
 
+  storage: Storage = sessionStorage;
+
   constructor(private formBuilder: FormBuilder,
               private onlineShopFormService: OnlineShopFormService,
               private cartService: CartService,
@@ -37,6 +39,12 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
 
     this.reviewCartDetails();
+
+    let theEmail = '';
+    // read the user's email address from browser storage
+    if(this.storage.getItem('userEmail')==undefined){
+      theEmail = JSON.parse(this.storage.getItem('userEmail')!);
+    }
 
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
@@ -48,7 +56,7 @@ export class CheckoutComponent implements OnInit {
                                  [Validators.required, 
                                   Validators.minLength(2),
                                   OnlineShopValidators.notOnlyWhitespace]),
-        email: new FormControl('',
+        email: new FormControl(theEmail,
                               [Validators.required, 
                                Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
       }),
