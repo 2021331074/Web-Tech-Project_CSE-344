@@ -1,10 +1,8 @@
 <div class="login-status-header">
 
-    <!--
     <div *ngIf="isAuthenticated" class="login-status-user-info">
-        {{ userEmail }}
+        Welcome back!
     </div>
-    -->
 
     <button *ngIf="!isAuthenticated" (click)="login()" class="security-btn">Login</button>
 
