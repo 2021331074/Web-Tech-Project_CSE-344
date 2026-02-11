@@ -1,0 +1,35 @@
+{
+   "customer":{
+      "firstName":"richee",
+      "lastName":"ahmed",
+      "email":"richee@test.com"
+   },
+   "shippingAddress":{
+      "address":"dhamalipara",
+      "upazila":"Panchagarhsadar",
+      "district":"Panchagar"
+   },
+   "billingAddress":{
+      "address":"dhamalipara",
+      "upazila":"Panchagarhsadar",
+      "district":"Panchagar"
+   },
+   "order":{
+      "totalPrice":230,
+      "totalQuantity":2
+   },
+   "orderItems":[
+      {
+         "imageUrl":"assets/images/products/studs/stud-onlineshop-1000.png",
+         "quantity":1,
+         "unitPrice":114,
+         "productId":1
+      },
+      {
+         "imageUrl":"assets/images/products/pearls/pearl-onlineshop-1000.png",
+         "quantity":1,
+         "unitPrice":116,
+         "productId":76
+      }
+   ]
+}
